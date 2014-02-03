@@ -482,6 +482,14 @@ namespace Nest
 			return this.New(query, q => q.FilteredQueryDescriptor = query);
 		}
 
+        /// <summary>
+        /// A query that applies a filter to the results of another query. This query maps to Lucene FilteredQuery.
+        /// </summary>
+        public BaseQuery Filtered(FilteredQueryDescriptor<T> query)
+        {
+            return this.New(query, q => q.FilteredQueryDescriptor = query);
+        }
+
 		/// <summary>
 		/// A query that generates the union of documents produced by its subqueries, and that scores each document 
 		/// with the maximum score for that document as produced by any subquery, plus a tie breaking increment for 
